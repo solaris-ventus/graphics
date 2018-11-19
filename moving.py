@@ -21,7 +21,7 @@ while True:
     if (c0.getCenter().y <= r0 and dy < 0) or (c0.getCenter().y >= downBorder and dy > 0):
         dy = -dy
     c0.move(dx, dy)
-    r = 256
-    c0.setFill(color_rgb(r, g, b))
-    sleep(0.001)
-
+    c0.setFill(color_rgb(r % 256, g, b))
+    r += 1
+    r %= 256
+    sleep(0.01)

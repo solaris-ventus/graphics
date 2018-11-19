@@ -547,6 +547,9 @@ class Point(GraphicsObject):
         self.x = float(x)
         self.y = float(y)
 
+    def __iter__(self):
+        return iter((self.x, self.y))
+
     def __repr__(self):
         return "Point({}, {})".format(self.x, self.y)
 
