@@ -2,9 +2,12 @@ from time import sleep
 from graphics import *
 import collections
 import math
+import platform
 
 dx, dy = -1, -1
 win = GraphWin("moving", 800, 600)
+if platform.system() == 'Windows':
+    win.setBackground("grey")
 wWin = win.getWidth()
 hWin = win.getHeight()
 
@@ -38,7 +41,8 @@ while True:
     c0.setFill(color_rgb(int(c0.getCenter().x) // 2 % 256, int(c0.getCenter().y) // 2 % 256, 100))
     sleep(0.002)
     # Отладочный проверка выхода за гранизу
-    if c0.getCenter().x < r0 - 1 or c0.getCenter().x > wWin + 1 - r0 \
-            or c0.getCenter().y < r0 - 1 or c0.getCenter().y > hWin + 1 - r0:
-        print("Текущие координаты центра окружности:", c0.getCenter(), "\nРадиус окружности:", c0.getRadius(), "\nРазер холста:", win.getWidth(), win.getHeight())
-        break
+    #if c0.getCenter().x < r0 - 1 or c0.getCenter().x > wWin + 1 - r0 \
+    #        or c0.getCenter().y < r0 - 1 or c0.getCenter().y > hWin + 1 - r0:
+    #    print("Текущие координаты центра окружности:", c0.getCenter(), "\nРадиус окружности:", c0.getRadius(),
+    #          "\nРазер холста:", win.getWidth(), win.getHeight())
+    #    break
